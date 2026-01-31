@@ -1,0 +1,460 @@
+{
+  "metadata": {
+    "last_updated": "2026-01-31T14:16:57Z",
+    "source_url": "https://aws.amazon.com/ec2/capacityblocks/pricing/",
+    "version": "1.0.0"
+  },
+  "instance_types": {
+    "u-p6e-gb200x72": {
+      "instance_family": "P6e",
+      "accelerator_type": "GB200",
+      "accelerator_count": 72,
+      "pricing": [
+        {
+          "region": "Dallas Local Zone\n(US East N. Virginia)",
+          "region_code": "us-east-1-dfw-2a",
+          "hourly_rate_usd": 10.582,
+          "accelerator_hourly_rate_usd": 0.0
+        }
+      ]
+    },
+    "u-p6e-gb200x36": {
+      "instance_family": "P6e",
+      "accelerator_type": "GB200",
+      "accelerator_count": 36,
+      "pricing": [
+        {
+          "region": "Dallas Local Zone\n(US East N. Virginia)",
+          "region_code": "us-east-1-dfw-2a",
+          "hourly_rate_usd": 10.582,
+          "accelerator_hourly_rate_usd": 0.0
+        }
+      ]
+    },
+    "p6-b300.48xlarge": {
+      "instance_family": "P6-B300",
+      "accelerator_type": "B300",
+      "accelerator_count": 8,
+      "pricing": [
+        {
+          "region": "US West (Oregon)",
+          "region_code": "us-west-2",
+          "hourly_rate_usd": 93.6,
+          "accelerator_hourly_rate_usd": 11.7
+        }
+      ]
+    },
+    "p6-b200.48xlarge": {
+      "instance_family": "P6-B200",
+      "accelerator_type": "B200",
+      "accelerator_count": 8,
+      "pricing": [
+        {
+          "region": "US East (Ohio)",
+          "region_code": "us-east-2",
+          "hourly_rate_usd": 74.88,
+          "accelerator_hourly_rate_usd": 9.36
+        },
+        {
+          "region": "US West (Oregon)",
+          "region_code": "us-west-2",
+          "hourly_rate_usd": 74.88,
+          "accelerator_hourly_rate_usd": 9.36
+        },
+        {
+          "region": "US East (N. Virginia)",
+          "region_code": "us-east-1",
+          "hourly_rate_usd": 74.88,
+          "accelerator_hourly_rate_usd": 9.36
+        }
+      ]
+    },
+    "p5.48xlarge": {
+      "instance_family": "P5",
+      "accelerator_type": "H100",
+      "accelerator_count": 8,
+      "pricing": [
+        {
+          "region": "South America (Sao Paulo)",
+          "region_code": "sa-east-1",
+          "hourly_rate_usd": 31.464,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "US East (N. Virginia)",
+          "region_code": "us-east-1",
+          "hourly_rate_usd": 31.464,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "Europe (Stockholm)",
+          "region_code": "eu-north-1",
+          "hourly_rate_usd": 31.464,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "Asia Pacific (Mumbai)",
+          "region_code": "ap-south-1",
+          "hourly_rate_usd": 31.464,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "Asia Pacific (Jakarta)",
+          "region_code": "ap-southeast-3",
+          "hourly_rate_usd": 31.464,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "Europe (London)",
+          "region_code": "eu-west-2",
+          "hourly_rate_usd": 31.464,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "Australia (Sydney)",
+          "region_code": "ap-southeast-2",
+          "hourly_rate_usd": 31.464,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "US West (Oregon)",
+          "region_code": "us-west-2",
+          "hourly_rate_usd": 31.464,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "US East (Ohio)",
+          "region_code": "us-east-2",
+          "hourly_rate_usd": 31.464,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "Asia Pacific (Tokyo)",
+          "region_code": "ap-northeast-1",
+          "hourly_rate_usd": 31.464,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "US West (N. California)",
+          "region_code": "us-west-1",
+          "hourly_rate_usd": 39.33,
+          "accelerator_hourly_rate_usd": 4.916
+        }
+      ]
+    },
+    "p5.4xlarge": {
+      "instance_family": "P5",
+      "accelerator_type": "H100",
+      "accelerator_count": 1,
+      "pricing": [
+        {
+          "region": "US East (N. Virginia)",
+          "region_code": "us-east-1",
+          "hourly_rate_usd": 3.933,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "Asia Pacific (Tokyo)",
+          "region_code": "ap-northeast-1",
+          "hourly_rate_usd": 3.933,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "Asia Pacific (Mumbai)",
+          "region_code": "ap-south-1",
+          "hourly_rate_usd": 3.933,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "US East (Ohio)",
+          "region_code": "us-east-2",
+          "hourly_rate_usd": 3.933,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "US West (Oregon)",
+          "region_code": "us-west-2",
+          "hourly_rate_usd": 3.933,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "South America (Sao Paulo)",
+          "region_code": "sa-east-1",
+          "hourly_rate_usd": 3.933,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "Australia (Sydney)",
+          "region_code": "ap-southeast-2",
+          "hourly_rate_usd": 3.933,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "Europe (London)",
+          "region_code": "eu-west-2",
+          "hourly_rate_usd": 3.933,
+          "accelerator_hourly_rate_usd": 3.933
+        }
+      ]
+    },
+    "p5e.48xlarge": {
+      "instance_family": "P5e",
+      "accelerator_type": "H200",
+      "accelerator_count": 8,
+      "pricing": [
+        {
+          "region": "South America (Sao Paulo)",
+          "region_code": "sa-east-1",
+          "hourly_rate_usd": 39.799,
+          "accelerator_hourly_rate_usd": 4.975
+        },
+        {
+          "region": "US East (Ohio)",
+          "region_code": "us-east-2",
+          "hourly_rate_usd": 39.799,
+          "accelerator_hourly_rate_usd": 4.975
+        },
+        {
+          "region": "Asia Pacific (Tokyo)",
+          "region_code": "ap-northeast-1",
+          "hourly_rate_usd": 39.799,
+          "accelerator_hourly_rate_usd": 4.975
+        },
+        {
+          "region": "Australia (Sydney)",
+          "region_code": "ap-southeast-2",
+          "hourly_rate_usd": 39.799,
+          "accelerator_hourly_rate_usd": 4.975
+        },
+        {
+          "region": "Europe (London)",
+          "region_code": "eu-west-2",
+          "hourly_rate_usd": 39.799,
+          "accelerator_hourly_rate_usd": 4.975
+        },
+        {
+          "region": "Asia Pacific (Mumbai)",
+          "region_code": "ap-south-1",
+          "hourly_rate_usd": 39.799,
+          "accelerator_hourly_rate_usd": 4.975
+        },
+        {
+          "region": "Asia Pacific (Jakarta)",
+          "region_code": "ap-southeast-3",
+          "hourly_rate_usd": 39.799,
+          "accelerator_hourly_rate_usd": 4.975
+        },
+        {
+          "region": "US West (N. California)",
+          "region_code": "us-west-1",
+          "hourly_rate_usd": 49.749,
+          "accelerator_hourly_rate_usd": 6.219
+        },
+        {
+          "region": "Europe (Stockholm)",
+          "region_code": "eu-north-1",
+          "hourly_rate_usd": 39.799,
+          "accelerator_hourly_rate_usd": 4.975
+        },
+        {
+          "region": "US West (Oregon)",
+          "region_code": "us-west-2",
+          "hourly_rate_usd": 39.799,
+          "accelerator_hourly_rate_usd": 4.975
+        }
+      ]
+    },
+    "p5en.48xlarge": {
+      "instance_family": "P5en",
+      "accelerator_type": "H200",
+      "accelerator_count": 8,
+      "pricing": [
+        {
+          "region": "Asia Pacific (Seoul)",
+          "region_code": "ap-northeast-2",
+          "hourly_rate_usd": 41.612,
+          "accelerator_hourly_rate_usd": 5.201
+        },
+        {
+          "region": "US East (Ohio)",
+          "region_code": "us-east-2",
+          "hourly_rate_usd": 41.612,
+          "accelerator_hourly_rate_usd": 5.201
+        },
+        {
+          "region": "Asia Pacific (Mumbai)",
+          "region_code": "ap-south-1",
+          "hourly_rate_usd": 41.612,
+          "accelerator_hourly_rate_usd": 5.201
+        },
+        {
+          "region": "Asia Pacific (Tokyo)",
+          "region_code": "ap-northeast-1",
+          "hourly_rate_usd": 41.612,
+          "accelerator_hourly_rate_usd": 5.201
+        },
+        {
+          "region": "US West (Oregon)",
+          "region_code": "us-west-2",
+          "hourly_rate_usd": 41.612,
+          "accelerator_hourly_rate_usd": 5.201
+        },
+        {
+          "region": "Europe (Stockholm)",
+          "region_code": "eu-north-1",
+          "hourly_rate_usd": 41.612,
+          "accelerator_hourly_rate_usd": 5.201
+        },
+        {
+          "region": "US East (N. Virginia)",
+          "region_code": "us-east-1",
+          "hourly_rate_usd": 41.612,
+          "accelerator_hourly_rate_usd": 5.201
+        },
+        {
+          "region": "US West (N. California)",
+          "region_code": "us-west-1",
+          "hourly_rate_usd": 52.015,
+          "accelerator_hourly_rate_usd": 6.502
+        },
+        {
+          "region": "Asia Pacific (Jakarta)",
+          "region_code": "ap-southeast-3",
+          "hourly_rate_usd": 41.612,
+          "accelerator_hourly_rate_usd": 5.201
+        },
+        {
+          "region": "Europe (London)",
+          "region_code": "eu-west-2",
+          "hourly_rate_usd": 41.612,
+          "accelerator_hourly_rate_usd": 5.201
+        },
+        {
+          "region": "Europe (Spain)",
+          "region_code": "eu-south-2",
+          "hourly_rate_usd": 41.612,
+          "accelerator_hourly_rate_usd": 5.201
+        }
+      ]
+    },
+    "p4d.24xlarge": {
+      "instance_family": "P4d",
+      "accelerator_type": "A100",
+      "accelerator_count": 8,
+      "pricing": [
+        {
+          "region": "US East (N. Virginia)",
+          "region_code": "us-east-1",
+          "hourly_rate_usd": 11.8,
+          "accelerator_hourly_rate_usd": 1.475
+        },
+        {
+          "region": "US West (Oregon)",
+          "region_code": "us-west-2",
+          "hourly_rate_usd": 11.8,
+          "accelerator_hourly_rate_usd": 1.475
+        },
+        {
+          "region": "US East (Ohio)",
+          "region_code": "us-east-2",
+          "hourly_rate_usd": 11.8,
+          "accelerator_hourly_rate_usd": 1.475
+        }
+      ]
+    },
+    "p4de.24xlarge": {
+      "instance_family": "P4de",
+      "accelerator_type": "A100",
+      "accelerator_count": 8,
+      "pricing": [
+        {
+          "region": "US East (N. Virginia)",
+          "region_code": "us-east-1",
+          "hourly_rate_usd": 14.7663,
+          "accelerator_hourly_rate_usd": 1.845
+        },
+        {
+          "region": "US West (Oregon)",
+          "region_code": "us-west-2",
+          "hourly_rate_usd": 14.7663,
+          "accelerator_hourly_rate_usd": 1.845
+        }
+      ]
+    },
+    "trn1.32xlarge": {
+      "instance_family": "Trn1",
+      "accelerator_type": "Trainium",
+      "accelerator_count": 16,
+      "pricing": [
+        {
+          "region": "US East (N. Virginia)",
+          "region_code": "us-east-1",
+          "hourly_rate_usd": 9.532,
+          "accelerator_hourly_rate_usd": 0.596
+        },
+        {
+          "region": "Europe (Stockholm)",
+          "region_code": "eu-north-1",
+          "hourly_rate_usd": 9.532,
+          "accelerator_hourly_rate_usd": 0.596
+        },
+        {
+          "region": "Australia (Sydney)",
+          "region_code": "ap-southeast-2",
+          "hourly_rate_usd": 9.532,
+          "accelerator_hourly_rate_usd": 0.596
+        },
+        {
+          "region": "US West (Oregon)",
+          "region_code": "us-west-2",
+          "hourly_rate_usd": 9.532,
+          "accelerator_hourly_rate_usd": 0.596
+        },
+        {
+          "region": "US East (Ohio)",
+          "region_code": "us-east-2",
+          "hourly_rate_usd": 9.532,
+          "accelerator_hourly_rate_usd": 0.596
+        },
+        {
+          "region": "Australia (Melbourne)",
+          "region_code": "ap-southeast-4",
+          "hourly_rate_usd": 9.532,
+          "accelerator_hourly_rate_usd": 0.596
+        },
+        {
+          "region": "Asia Pacific (Mumbai)",
+          "region_code": "ap-south-1",
+          "hourly_rate_usd": 9.532,
+          "accelerator_hourly_rate_usd": 0.596
+        }
+      ]
+    },
+    "trn2.3xlarge": {
+      "instance_family": "Trn2",
+      "accelerator_type": "Trainium2",
+      "accelerator_count": 1,
+      "pricing": [
+        {
+          "region": "Australia (Melbourne)",
+          "region_code": "ap-southeast-4",
+          "hourly_rate_usd": 2.235,
+          "accelerator_hourly_rate_usd": 2.235
+        }
+      ]
+    },
+    "trn2.48xlarge": {
+      "instance_family": "Trn2",
+      "accelerator_type": "Trainium2",
+      "accelerator_count": 16,
+      "pricing": [
+        {
+          "region": "US East (Ohio)",
+          "region_code": "us-east-2",
+          "hourly_rate_usd": 35.7608,
+          "accelerator_hourly_rate_usd": 2.235
+        }
+      ]
+    }
+  }
+}
