@@ -2,7 +2,8 @@
   "metadata": {
     "last_updated": "2026-02-01T00:41:14Z",
     "source_url": "https://aws.amazon.com/ec2/capacityblocks/pricing/",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "disclaimer": "This data is unofficial and not from AWS official sources. Accuracy is not guaranteed. Use at your own risk. Please refer to the official AWS website for the latest and accurate pricing information."
   },
   "instance_types": {
     "u-p6e-gb200x72": {
