@@ -1,9 +1,8 @@
 {
   "metadata": {
-    "last_updated": "2026-02-01T00:41:14Z",
+    "last_updated": "2026-03-01T00:40:29Z",
     "source_url": "https://aws.amazon.com/ec2/capacityblocks/pricing/",
-    "version": "1.0.0",
-    "disclaimer": "This data is unofficial and not from AWS official sources. Accuracy is not guaranteed. Use at your own risk. Please refer to the official AWS website for the latest and accurate pricing information."
+    "version": "1.0.0"
   },
   "instance_types": {
     "u-p6e-gb200x72": {
@@ -12,8 +11,8 @@
       "accelerator_count": 72,
       "pricing": [
         {
-          "region": "Dallas Local Zone\n(US East N. Virginia)",
-          "region_code": "us-east-1-dfw-2a",
+          "region": "US East (Dallas) Local Zone",
+          "region_code": "unknown",
           "hourly_rate_usd": 10.582,
           "accelerator_hourly_rate_usd": 0.0
         }
@@ -25,8 +24,8 @@
       "accelerator_count": 36,
       "pricing": [
         {
-          "region": "Dallas Local Zone\n(US East N. Virginia)",
-          "region_code": "us-east-1-dfw-2a",
+          "region": "US East (Dallas) Local Zone",
+          "region_code": "unknown",
           "hourly_rate_usd": 10.582,
           "accelerator_hourly_rate_usd": 0.0
         }
@@ -78,6 +77,12 @@
         {
           "region": "South America (Sao Paulo)",
           "region_code": "sa-east-1",
+          "hourly_rate_usd": 31.464,
+          "accelerator_hourly_rate_usd": 3.933
+        },
+        {
+          "region": "US East (Atlanta) Local Zone",
+          "region_code": "unknown",
           "hourly_rate_usd": 31.464,
           "accelerator_hourly_rate_usd": 3.933
         },
@@ -206,6 +211,12 @@
         {
           "region": "South America (Sao Paulo)",
           "region_code": "sa-east-1",
+          "hourly_rate_usd": 39.799,
+          "accelerator_hourly_rate_usd": 4.975
+        },
+        {
+          "region": "US West (Phoenix) Local Zone",
+          "region_code": "unknown",
           "hourly_rate_usd": 39.799,
           "accelerator_hourly_rate_usd": 4.975
         },
