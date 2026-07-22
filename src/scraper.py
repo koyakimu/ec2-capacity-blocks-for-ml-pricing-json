@@ -75,7 +75,7 @@ def main() -> None:
         instance_count = len(data.instance_types)
         total_entries = sum(len(it.pricing) for it in data.instance_types.values())
 
-        print(f"Successfully scraped pricing data:")
+        print("Successfully scraped pricing data:")
         print(f"  - Instance types: {instance_count}")
         print(f"  - Total pricing entries: {total_entries}")
         print(f"  - Output file: {output_path}")
