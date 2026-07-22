@@ -42,3 +42,14 @@ jobs:
           git add data/pricing.json
           git commit -m "Update pricing data $(date -u +%Y-%m-%d)"
           git push
+
+      - name: Notify aws-gpu-quick-reference
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.DISPATCH_PAT }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "DISPATCH_PAT not set; skipping notify (daily cron on the target repo will pick up changes)"
+            exit 0
+          fi
+          gh api repos/koyakimu/aws-gpu-quick-reference/dispatches -f event_type=cb-pricing-updated
