@@ -42,9 +42,15 @@ REGION_NAME_TO_CODE = {
     # Alternate naming conventions
     "Australia (Sydney)": "ap-southeast-2",
     "Australia (Melbourne)": "ap-southeast-4",
+    # GovCloud
+    "AWS GovCloud (US-East)": "us-gov-east-1",
+    "AWS GovCloud (US-West)": "us-gov-west-1",
     # Local Zones
     "US West (Dallas Local Zone)": "us-west-2-dal-1a",
     "Dallas Local Zone\n(US East N. Virginia)": "us-east-1-dfw-2a",
+    "US East (Dallas) Local Zone": "us-east-1-dfw-2a",
+    "US East (Atlanta) Local Zone": "us-east-1-atl-2a",
+    "US West (Phoenix) Local Zone": "us-west-2-phx-2a",
 }
 
 INSTANCE_TYPE_INFO: dict[str, dict] = {
@@ -75,17 +81,15 @@ INSTANCE_TYPE_INFO: dict[str, dict] = {
 def extract_json_data(html: str) -> list[dict]:
     """Extract JSON data from the pricing page HTML.
 
-    The page embeds pricing data in <script type="application/json"> tags.
-    Each tag contains a structure like:
-    {
-        "data": {
-            "items": [{
-                "fields": {
-                    "jsonData": "{...escaped JSON with table data...}"
-                }
-            }]
-        }
-    }
+    The page embeds pricing data in <script type="application/json"> tags,
+    in one of two formats:
+
+    Old format (pre 2026-04): fields.jsonData holds an escaped JSON string
+    with {"heading": ..., "table": {"rowDefinitions": [...], "items": [...]}}.
+
+    New format (2026-04 onwards): fields holds the table directly as
+    itemHeading, itemTableRowGroups, and itemTableData (the latter two are
+    JSON strings).
     """
     pattern = r'<script type="application/json">(.*?)</script>'
     script_matches = re.findall(pattern, html, re.DOTALL)
@@ -100,43 +104,72 @@ def extract_json_data(html: str) -> list[dict]:
 
         items = outer_data.get("data", {}).get("items", [])
         for item in items:
-            json_data_str = item.get("fields", {}).get("jsonData", "")
-            if not json_data_str:
-                continue
-
-            try:
-                table_data = json.loads(json_data_str)
-            except json.JSONDecodeError:
-                continue
-
-            heading = table_data.get("heading", "")
-            if "Pricing" not in heading:
-                continue
-
-            table = table_data.get("table", {})
-            row_definitions = table.get("rowDefinitions", [])
-            table_items = table.get("items", [])
-
-            row_labels = {row["id"]: row.get("label", "") for row in row_definitions}
-
-            for table_item in table_items:
-                row_id = table_item.get("idProperty", "")
-                instance_type = row_labels.get(row_id, "")
-
-                region = table_item.get("2", "")
-                price = table_item.get("3", "")
-
-                if instance_type and region and price:
-                    all_rows.append(
-                        {
-                            "instance_type": instance_type,
-                            "region": region,
-                            "price": price,
-                            "heading": heading,
-                        }
-                    )
+            fields = item.get("fields", {})
+            if "jsonData" in fields:
+                all_rows.extend(_extract_rows_old_format(fields))
+            elif "itemTableData" in fields:
+                all_rows.extend(_extract_rows_new_format(fields))
 
     return all_rows
+
+
+def _collect_table_rows(
+    heading: str, row_definitions: list[dict], table_items: list[dict]
+) -> list[dict]:
+    """Build row dicts from table row definitions and data items."""
+    rows = []
+    row_labels = {row["id"]: row.get("label", "") for row in row_definitions}
+
+    for table_item in table_items:
+        row_id = table_item.get("idProperty", "")
+        instance_type = row_labels.get(row_id, "")
+
+        region = table_item.get("2", "")
+        price = table_item.get("3", "")
+
+        if instance_type and region and price:
+            rows.append(
+                {
+                    "instance_type": instance_type,
+                    "region": region,
+                    "price": price,
+                    "heading": heading,
+                }
+            )
+
+    return rows
+
+
+def _extract_rows_old_format(fields: dict) -> list[dict]:
+    """Extract rows from the old fields.jsonData format."""
+    try:
+        table_data = json.loads(fields.get("jsonData", ""))
+    except json.JSONDecodeError:
+        return []
+
+    heading = table_data.get("heading", "")
+    if "Pricing" not in heading:
+        return []
+
+    table = table_data.get("table", {})
+    return _collect_table_rows(
+        heading, table.get("rowDefinitions", []), table.get("items", [])
+    )
+
+
+def _extract_rows_new_format(fields: dict) -> list[dict]:
+    """Extract rows from the new itemHeading/itemTableRowGroups/itemTableData format."""
+    heading = fields.get("itemHeading", "")
+    if "Pricing" not in heading:
+        return []
+
+    try:
+        row_definitions = json.loads(fields.get("itemTableRowGroups", "[]"))
+        table_items = json.loads(fields.get("itemTableData", "[]"))
+    except json.JSONDecodeError:
+        return []
+
+    return _collect_table_rows(heading, row_definitions, table_items)
 
 
 def clean_html(text: str) -> str:
@@ -152,7 +185,7 @@ def parse_price_string(price_str: str) -> tuple[float, float]:
     """Parse price string like '$31.464 USD ($3.933 USD)' into (hourly, per_accelerator)."""
     price_str = clean_html(price_str)
 
-    pattern = r"\$?([\d,]+\.?\d*)\s*USD\s*\(\$?([\d,]+\.?\d*)\s*USD\)"
+    pattern = r"\$?([\d,]+\.?\d*)\s*(?:USD\s*)?\(\$?([\d,]+\.?\d*)\s*USD\)"
     match = re.search(pattern, price_str)
     if match:
         hourly = float(match.group(1).replace(",", ""))
