@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-08-01T00:39:03Z",
+    "last_updated": "2026-09-01T03:48:29Z",
     "source_url": "https://aws.amazon.com/ec2/capacityblocks/pricing/",
     "version": "1.0.0"
   },
@@ -47,6 +47,18 @@
           "region_code": "us-gov-east-1",
           "hourly_rate_usd": 117.0,
           "accelerator_hourly_rate_usd": 14.625
+        },
+        {
+          "region": "Asia Pacific (Hyderabad)",
+          "region_code": "ap-south-2",
+          "hourly_rate_usd": 112.32,
+          "accelerator_hourly_rate_usd": 14.04
+        },
+        {
+          "region": "Asia Pacific (Seoul)",
+          "region_code": "ap-northeast-2",
+          "hourly_rate_usd": 112.32,
+          "accelerator_hourly_rate_usd": 14.04
         },
         {
           "region": "US East (N. Virginia)",
