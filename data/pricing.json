@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-09-07T04:48:52Z",
+    "last_updated": "2026-10-01T04:25:47Z",
     "source_url": "https://aws.amazon.com/ec2/capacityblocks/pricing/",
     "version": "1.0.0"
   },
@@ -100,6 +100,18 @@
         {
           "region": "Asia Pacific (Mumbai)",
           "region_code": "ap-south-1",
+          "hourly_rate_usd": 98.84,
+          "accelerator_hourly_rate_usd": 12.355
+        },
+        {
+          "region": "Europe (Paris)",
+          "region_code": "eu-west-3",
+          "hourly_rate_usd": 98.84,
+          "accelerator_hourly_rate_usd": 12.355
+        },
+        {
+          "region": "Europe (Stockholm)",
+          "region_code": "eu-north-1",
           "hourly_rate_usd": 98.84,
           "accelerator_hourly_rate_usd": 12.355
         },
@@ -350,6 +362,12 @@
         {
           "region": "US East (Ohio)",
           "region_code": "us-east-2",
+          "hourly_rate_usd": 54.92,
+          "accelerator_hourly_rate_usd": 6.865
+        },
+        {
+          "region": "US East (Atlanta) Local Zone",
+          "region_code": "us-east-1-atl-2a",
           "hourly_rate_usd": 54.92,
           "accelerator_hourly_rate_usd": 6.865
         },
